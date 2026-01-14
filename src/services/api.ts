@@ -50,7 +50,7 @@ export class PolymarketAPI {
 	 * Searches markets, events, and profiles using a query string.
 	 */
 	async searchMarkets(query: string) {
-		return this.gamma.search({ q: query });
+		return this.gamma.search({ q: query, cache: false, events_status: "active", limit_per_type: 10 });
 	}
 
 	/**
